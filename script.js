@@ -1,13 +1,58 @@
-let num = 266219;
-
-num = String(num); //превратил в строку.
-console.log(typeof num);
-let result = 1;
-for (let i = 0; i < num.length; i++) {
-   result = result * num[i];
-
+let lang = "ru";
+if (lang === "ru") {
+  console.log(
+    "Понедельник",
+    "Вторник",
+    "Среда",
+    "Четверг",
+    "Пятница",
+    "Суббота",
+    "Воскресение"
+  );
+} else if (lang === "en") {
+  console.log(
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  );
 }
-console.log(result);// вывел произведение чисел
 
-let a = result ** 3;
-console.log(String(a).substr(0,2));
+switch (lang) {
+  case "en":
+    console.log(
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    );
+    break;
+  case "ru":
+    console.log(
+      "Понедельник",
+      "Вторник",
+      "Среда",
+      "Четверг",
+      "Пятница",
+      "Суббота",
+      "Воскресение"
+    );
+    break;
+}
+
+let langArr = {
+   'ru': ['Понедельник','Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресение'],
+   'en': ['Monday','Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+
+};
+ 
+
+let namePerson = 'Артем';
+let result = (namePerson === 'Артем') ? 'директор' : (namePerson === 'Максим') ? 'преподаватель' : 'студент';
+console.log(result);
