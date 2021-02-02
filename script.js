@@ -1,58 +1,19 @@
-let lang = "ru";
-if (lang === "ru") {
-  console.log(
-    "Понедельник",
-    "Вторник",
-    "Среда",
-    "Четверг",
-    "Пятница",
-    "Суббота",
-    "Воскресение"
-  );
-} else if (lang === "en") {
-  console.log(
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday"
-  );
+"use strict";
+
+function study(data) {
+  let string = "";
+  if (typeof data !== "string") {
+    console.log("Это не строка!!!");
+  } else if (typeof data === "string") {
+    if (data.length > 30) {
+      string = data.substr(0, 30) + "...";
+    } else {
+      string = data;
+    }
+  }
+  return string;
 }
 
-switch (lang) {
-  case "en":
-    console.log(
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    );
-    break;
-  case "ru":
-    console.log(
-      "Понедельник",
-      "Вторник",
-      "Среда",
-      "Четверг",
-      "Пятница",
-      "Суббота",
-      "Воскресение"
-    );
-    break;
-}
-
-let langArr = {
-   'ru': ['Понедельник','Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресение'],
-   'en': ['Monday','Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-
-};
- 
-
-let namePerson = 'Артем';
-let result = (namePerson === 'Артем') ? 'директор' : (namePerson === 'Максим') ? 'преподаватель' : 'студент';
-console.log(result);
+console.log(study());
+console.log(study("Сколько здесь символов??"));
+console.log(study("Ну в этой строке, сивмолов должно быть "));
