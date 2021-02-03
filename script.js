@@ -1,19 +1,28 @@
 "use strict";
+// 1) Создать массив arr = []
+// — Записать в него 7 любых многозначных чисел в виде строк
+// — Вывести в консоль только те, что начинаются с цифры 2 или 4 (Должны присутствовать в массиве)
 
-function study(data) {
-  let string = "";
-  if (typeof data !== "string") {
-    console.log("Это не строка!!!");
-  } else if (typeof data === "string") {
-    if (data.length > 30) {
-      string = data.substr(0, 30) + "...";
-    } else {
-      string = data;
-    }
+let myArr = ['2222', '123445', '4647', '2021', '007', '9876'];
+for(let item of myArr) {
+  if (item.startsWith('2') || item.startsWith('4')) {
+    console.log(item);
   }
-  return string;
 }
 
-console.log(study());
-console.log(study("Сколько здесь символов??"));
-console.log(study("Ну в этой строке, сивмолов должно быть "));
+
+// 2) Вывести в столбик все простые числа от 1 до 100 (сделать при помощи цикла)
+// — Рядом с каждым числом написать оба делителя данного числа
+//     Например: “Делители этого числа: 1 и n”
+
+let n = 100;
+
+nextPrime:
+for (let i = 1; i <= n; i++) { // Для всех i...
+
+  for (let j = 2; j < i; j++) { // проверить, делится ли число..
+    if (i % j == 0) continue nextPrime; // не подходит, берём следующее
+  }
+
+  console.log(i + '=== Делители этого числа ' + '1 и ' + i); // простое число
+}
