@@ -1,18 +1,11 @@
-'use strict';
+"use strict";
 
-const week = [ 'понед', 'вторник', 'среда', 'четверг', 'пятница', 'сб','вс'];
-let date = new Date().getDay() ;
-let arr = [];
+let btn = document.querySelector(".btn"),
+  colorValue = document.querySelector(".colorValue"),
+  body = document.querySelector(".body");
 
-week.forEach((el, i) => {
-  arr.push(el);
-  if (el === 'сб' || el === 'вс') {
-    arr[i] = el.italics();
-  }
-  if (date === (i - 6) && el === 'вс') {
-    arr[i] = el.italics().bold();
-  }
+btn.addEventListener("click", function () {
+  let color = "#" + (Math.random().toString(16) + "000000").substring(2, 8);
+  body.style.backgroundColor = color;
+  colorValue.textContent = color;
 });
-
-
-document.write(arr.join(' --- '));

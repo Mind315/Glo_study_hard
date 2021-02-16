@@ -1,13 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <title>Document</title>
+    <title>random color!!!</title>
+    <style>
+      .body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+      }
+      .colorValue {
+        margin: 100px 0;
+      }
+      .btn {
+        padding: 15px 50px;
+        font-size: 24px;
+        background-color: white;
+        opacity: 0.8;
+        color: black;
+        font-weight: 900;
+        border-radius: 10px;
+        background: rgb(100, 100, 100)
+          radial-gradient(
+            circle at 50% 0,
+            rgba(255, 255, 255, 0.65),
+            rgba(255, 255, 255, 0.35)
+          );
+        box-shadow: inset rgba(0, 0, 0, 0.6) 0 -3px 8px,
+          inset rgba(252, 255, 255, 0.7) 0 3px 8px,
+          rgba(0, 0, 0, 0.8) 0 3px 8px -3px;
+        animation: nev 5s infinite alternate;
+      }
+      @keyframes nev {
+        0% {
+          opacity: 0.1;
+          border-radius: 150px;
+          padding: 15px 50px;
+        }
+        20% {
+          opacity: 0.3;
+          border-radius: 50px;
+          padding: 15px 80px;
+        }
+
+        50% {
+          opacity: 0.6;
+          border-radius: 10px;
+          padding: 15px 90px;
+        }
+
+        100% {
+          opacity: 1;
+          border-radius: 0;
+          padding: 15px 120px;
+        }
+      }
+      .btn:focus {
+        outline: none;
+      }
+      .btn:hover {
+        color: whitesmoke;
+      }
+    </style>
   </head>
-  <body>
-   
+  <body class="body">
+    <h1 class="colorValue">#FFFFFF</h1>
+    <button class="btn">CLICK</button>
+
     <script src="script.js"></script>
   </body>
 </html>
